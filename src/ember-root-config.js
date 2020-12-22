@@ -12,7 +12,7 @@ registerApplication({
 
 const isLocal = false;
 const planetsDomain = isLocal
-  ? "http://localhost:4201/planets"
+  ? "http://localhost:4201/"
   : "https://mem-planets.surge.sh";
 const planetsApp = registerApplication(
   "planets",
@@ -26,7 +26,7 @@ const planetsApp = registerApplication(
 );
 
 const peopleDomain = isLocal
-  ? "http://localhost:4200/people"
+  ? "http://localhost:4200/"
   : "https://mem-people.surge.sh";
 const peopleApp = registerApplication(
   "people",
