@@ -33,10 +33,7 @@
     {
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.8.3/lib/system/single-spa.min.js",
-         "react": "https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js",
-         "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js",
-         "@react-mf/styleguide": "https://react.microfrontends.app/styleguide/cb27d8c9ee168afe3b9075e4b3d91df675d46e85/react-mf-styleguide.js",
-         "@react-mf/navbar": "https://react.microfrontends.app/navbar/5df1605952f410040a3b8b9eea148a744aba0174/react-mf-navbar.js",
+         "@ember-mf/styleguide": "https://ember-micro-frontends.github.io/styleguide/ember-mf-styleguide.js",
          "@ember/root-config": "https://multi-ember-mfe.surge.sh/ember-root-config.js"
       }
     }
@@ -50,7 +47,8 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@ember/root-config": "//localhost:9000/ember-root-config.js"
+        "@ember/root-config": "//localhost:9000/ember-root-config.js",
+        "navbar": "//localhost:8080/index.js"
       }
     }
   </script>
@@ -75,7 +73,7 @@
 <body>
   <nav class="topnav">
     <div id="nav"></div>
-        <application name="@react-mf/navbar" loader="topNav" error="topNav"></application>
+        <application name="navbar" loader="topNav" error="topNav"></application>
       </nav>
       <div class="main-content mt-16">
         <route path="people">
@@ -94,7 +92,8 @@
       </div>
   <script>
     System.import('@ember/root-config');
-    System.import('@react-mf/styleguide');
+    System.import('navbar');
+    System.import('@ember-mf/styleguide');
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
