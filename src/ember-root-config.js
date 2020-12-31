@@ -7,9 +7,7 @@ registerApplication({
   activeWhen: () => true,
 });
 
-window.__sspaEmber = {};
-
-const isLocal = true;
+const isLocal = false;
 const planetsDomain = isLocal
   ? "http://localhost:4201/"
   : "https://mem-planets.surge.sh";
@@ -19,7 +17,6 @@ const planetsApp = registerApplication(
     const appName = "planets";
     const appUrl = `${planetsDomain}/assets/planets.js`;
     const vendorUrl = `${planetsDomain}/assets/vendor.js`;
-    window.__sspaEmber[appName] = { appUrl, vendorUrl };
     return loadEmberApp(appName, appUrl, vendorUrl);
   },
   (location) => location.pathname.startsWith("/planets")
@@ -34,7 +31,6 @@ const peopleApp = registerApplication(
     const appName = "people";
     const appUrl = `${peopleDomain}/assets/people.js`;
     const vendorUrl = `${peopleDomain}/assets/vendor.js`;
-    window.__sspaEmber[appName] = { appUrl, vendorUrl };
     return loadEmberApp(appName, appUrl, vendorUrl);
   },
   (location) => location.pathname.startsWith("/people")

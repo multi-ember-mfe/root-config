@@ -19,7 +19,7 @@
   <meta name="importmap-type" content="systemjs-importmap" />
   <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
   <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
-  <!-- <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> -->
+   <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> 
 
   <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
 
@@ -34,7 +34,8 @@
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.8.3/lib/system/single-spa.min.js",
          "@ember-mf/styleguide": "https://ember-micro-frontends.github.io/styleguide/ember-mf-styleguide.js",
-         "@ember/root-config": "https://multi-ember-mfe.surge.sh/ember-root-config.js"
+         "@ember/root-config": "https://multi-ember-mfe.surge.sh/ember-root-config.js",
+         "navbar": "https://mem-navbar.surge.sh/index.js"
       }
     }
   </script>
@@ -47,8 +48,7 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@ember/root-config": "//localhost:9000/ember-root-config.js",
-        "navbar": "//localhost:8080/index.js"
+        "@ember/root-config": "//localhost:9000/ember-root-config.js"
       }
     }
   </script>
@@ -86,7 +86,7 @@
         </route>
         <route default>
           <h1 class="flex flex-row justify-center p-16">
-            <p class="max-w-md">This example project shows independently built and deployed microfrontends that use React and single-spa. Each nav link above takes you to a different microfrontend.</p>
+            <p class="max-w-md">This example project shows independently built and deployed microfrontends that use Ember.js and single-spa. Each nav link above takes you to a different microfrontend.</p>
           </h1>
         </route>
       </div>
